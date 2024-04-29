@@ -9,3 +9,7 @@
     background-image: url('./assets/background.png');
     background-size: cover;
 }
+.logo-container{
+    display: flex;
+    align-items: center;
+}
