@@ -1,6 +1,8 @@
 .logo{
-    height: 30vh;
-    width: 30vh;
-    z-index: 1;
-    
+    height: 34vh;
+    width: 34vh;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-52%, -50%);
 }

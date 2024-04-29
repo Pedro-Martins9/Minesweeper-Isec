@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9+Charted&family=Jersey+15&family=Press+Start+2P&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -8,8 +9,24 @@
     height: 100vh;
     background-image: url('./assets/background.png');
     background-size: cover;
+    align-items: center;
+    justify-content: center;
 }
 .logo-container{
     display: flex;
     align-items: center;
+}
+.botao{
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+    transition: all 0.5s;
+}
+
+.botaoBasico-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
