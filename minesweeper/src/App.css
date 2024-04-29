@@ -16,17 +16,27 @@
     display: flex;
     align-items: center;
 }
+.botao-master{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30vh;
+}
+.botao-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
+    
+}
 .botao{
     font-family: "Press Start 2P", system-ui;
     font-weight: 400;
     font-style: normal;
     font-size: 2em;
     transition: all 0.5s;
-}
-
-.botaoBasico-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+    padding: 25px;
+    letter-spacing: 3px;
+    text-align: center;
 }

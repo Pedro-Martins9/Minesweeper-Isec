@@ -3,7 +3,7 @@ import "./botaoBasico.css"
 
 function BotaoBasico()
 {
-    return <button type="button" class="btn btn-outline-danger btn-lg botao botaoBasico">BÁSICO</button>
+    return <button type="button" className="botao">BÁSICO</button>
 }
 
 export default BotaoBasico
