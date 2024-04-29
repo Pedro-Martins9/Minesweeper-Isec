@@ -1,9 +1,6 @@
 import React from 'react';
 import "./App.css"
-import Logo from "./components/logo/logo"
-import BotaoBasico from './components/botaoBasico/botaoBasico';
-import BotaoIntermedio from './components/botaoIntermedio/botaoIntermedio';
-import BotaoAvancado from './components/botaoAvancado/botaoAvancado';
+import { Logo, BotaoBasico, BotaoIntermedio, BotaoAvancado } from './components/index';
 
 
 function App(){
