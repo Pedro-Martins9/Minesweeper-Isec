@@ -12,16 +12,11 @@
     align-items: center;
     justify-content: center;
 }
-.logo-container{
-    display: flex;
-    align-items: center;
-}
-.botao-master{
+.homepage{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 30vh;
 }
 .botao-container{
     display: flex;
@@ -36,7 +31,7 @@
     font-style: normal;
     font-size: 2em;
     transition: all 0.5s;
-    padding: 25px;
-    letter-spacing: 3px;
+    padding: 20px;
+    letter-spacing: 2px;
     text-align: center;
 }

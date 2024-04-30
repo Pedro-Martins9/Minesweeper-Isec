@@ -8,8 +8,8 @@ function App(){
 return (
     <>
     <div className='background'>
+    <div className='homepage'>
         <div className='logo-container'><Logo/></div>
-        <div className='botao-master'>
         <div className='botao-container'><BotaoBasico/></div>
         <div className='botao-container'><BotaoIntermedio/></div>
         <div className='botao-container'><BotaoAvancado/></div>
