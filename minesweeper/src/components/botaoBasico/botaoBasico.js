@@ -1,9 +1,9 @@
 import "./botaoBasico.css"
 
 
-function BotaoBasico()
+function BotaoBasico({handlemodoJogo})
 {
-    return <button type="button" className="botao">BÁSICO</button>
+    return <button onClick={handlemodoJogo} type="button" className="botao">BÁSICO</button>
 }
 
 export default BotaoBasico

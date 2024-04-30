@@ -1,9 +1,8 @@
 import "./botaoIntermedio.css"
 
 
-function BotaoIntermedio()
+function BotaoIntermedio({handlemodoJogo})
 {
-    return <button type="button" className="botao">INTERMÉDIO</button>
-}
+    return <button onClick={handlemodoJogo} type="button" className="botao">INTERMÉDIO</button>}
 
 export default BotaoIntermedio
