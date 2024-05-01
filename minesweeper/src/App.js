@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "./App.css"
-import { Logo, BotaoBasico, BotaoIntermedio, BotaoAvancado, JogoBAS, JogoAVA } from './components/index';
+import { Logo, BotaoBasico, BotaoIntermedio, BotaoAvancado, JogoBAS, JogoINT, JogoAVA } from './components/index';
 
 
 function App(){
