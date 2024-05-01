@@ -1,8 +1,8 @@
 import "./botaoAvancado.css"
 
 
-function BotaoAvancado({handlemodoJogo})
+function BotaoAvancado({handlemodoJogoAVA})
 {
-    return <button onClick={handlemodoJogo} type="button" className="botao">AVANÇADO</button>}
+    return <button onClick={handlemodoJogoAVA} type="button" className="botao">AVANÇADO</button>}
 
 export default BotaoAvancado
