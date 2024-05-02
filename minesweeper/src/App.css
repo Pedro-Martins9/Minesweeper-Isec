@@ -35,3 +35,10 @@
     letter-spacing: 2px;
     text-align: center;
 }
+
+@media (max-width:769px) {
+    .botao{
+        padding: 1vh;
+    }
+
+  }
