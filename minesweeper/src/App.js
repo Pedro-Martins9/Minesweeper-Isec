@@ -11,6 +11,8 @@ function App(){
         setmodoJogoBAS(!modoJogoBAS);
     };
 
+    const [gameOver, setGameOver] = useState(false);
+
     const[modoJogoINT, setmodoJogoINT] = useState(false);
 
     const handlemodoJogoINT= () =>{
