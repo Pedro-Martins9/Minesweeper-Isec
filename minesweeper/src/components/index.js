@@ -6,3 +6,4 @@ export { default as JogoAVA } from "./jogoAVA/jogoAVA";
 export { default as JogoINT } from "./jogoINT/jogoINT";
 export { default as JogoBAS } from "./jogoBAS/jogoBAS";
 export { default as BotaoMenu } from "./botaoMenu/botaoMenu";
+

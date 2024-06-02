@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./jogoINT.css"
+import Timer from '../timer/timer';
 
 function JogoINT() {
   const LINS = 16;
@@ -9,6 +10,8 @@ function JogoINT() {
   const [cell, setCell] = useState([]);
   const [area, setArea] = useState([]);
   const [band, setBand] = useState([]);
+
+  const [activo, setActivo] =useState(false);
 
   useEffect(() => {
     criaArea();
@@ -76,6 +79,7 @@ function JogoINT() {
   function mostraCell(area, lin, col) {
     if (lin < 0 || lin >= LINS || col < 0 || col >= COLS || area[lin][col]) return; //procura se area clickada esta dentro da Area de jogo
     area[lin][col] = true;
+    setActivo(true);
     if (cell[lin][col] === 0) { //se a celula nao tiver mina ou mina adjacente revela tambem as celulas adjacentes com as mesmas condições
       for (let i = -1; i <= 1; i++) {
         for (let j = -1; j <= 1; j++) {
@@ -115,6 +119,9 @@ function JogoINT() {
   ))
 ))}
 
+      </div>
+      <div className='botao timer'>
+      <Timer activo={activo}/>
       </div>
     </div>
   );
