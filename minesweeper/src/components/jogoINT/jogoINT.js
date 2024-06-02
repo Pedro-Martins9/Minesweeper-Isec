@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./jogoINT.css"
 import Timer from '../timer/timer'
 import GameOver from '../gameover/gameover';
+import Contador from '../contador/contador';
 
 function JogoINT() {
   const LINS = 16;
@@ -11,8 +12,14 @@ function JogoINT() {
   const [cell, setCell] = useState([]);
   const [area, setArea] = useState([]);
   const [band, setBand] = useState([]);
+  const [totalBand, setTotalBand] = useState(0); 
 
   const [activo, setActivo] =useState(false); //estado do jogo
+
+  useEffect(() => {
+    const total = band.flat().filter(cell => cell === 1).length; //adiciona/retira elementos de um array cuja lenght é calculada, esta é o total de bandeiras
+    setTotalBand(total);
+  }, [band]);
 
   useEffect(() => {
     criaArea();
@@ -125,7 +132,7 @@ function JogoINT() {
       {area[linIndex][colIndex] ? ( //ver se as celulas estao na area de jogo
         cell === -1 ? '💣' : cell === 0 ? '' : cell //se celula = -1 bomba se 0 nada
       ) : (
-        band[linIndex][colIndex] === 1 ? '🚩' : band[linIndex][colIndex] === 2 ? '💥' : '' //se celula = 1 bandeira se =2 explosao (possibilidade de mina e certeza de mina)
+        band[linIndex][colIndex] === 1 ? '🚩' : band[linIndex][colIndex] === 2 ? '❓' : '' //se celula = 1 bandeira se =2 explosao (possibilidade de mina e certeza de mina)
       )}
     </div>
   ))
@@ -135,6 +142,7 @@ function JogoINT() {
       <div className='botao timer'>
       <Timer activo={activo}/>
       <GameOver activo ={activo} reset={reset}/>
+      <Contador total = {totalBand}/>
       </div>
     </div>
     </>

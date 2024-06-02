@@ -1,12 +1,12 @@
 .jogo-int{
     display: grid;
-    grid-template-columns: repeat(16, 5vh);
+    grid-template-columns: repeat(16, 4.7vh);
 }
 .celulaINT{
     display: flex;
     flex-direction: row;
-    width: 5vh;
-    height: 5vh;
+    width: 4.7vh;
+    height: 4.7vh;
     border: 2px solid black;
     justify-content: center;
     align-items: center;
