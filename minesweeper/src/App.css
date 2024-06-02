@@ -36,6 +36,30 @@
     text-align: center;
 }
 
+
+
+.celula{
+    display: flex;
+    width: 7vh;
+    height: 7vh;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    gap: 0px;
+
+}
+.jogo-celula-in {
+    background: white;
+  }
+  
+.jogo-celula-out {
+    background: rgb(75, 73, 73);
+  }
+
+
 @media (max-width:769px) {
     .botao{
         padding: 1vh;

@@ -1,0 +1,17 @@
+.jogo-ava{
+    display: grid;
+    grid-template-columns: repeat(30, 5vh);
+}
+
+.celulaAVA{
+    display: flex;
+    flex-direction: row;
+    width: 5vh;
+    height: 5vh;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}

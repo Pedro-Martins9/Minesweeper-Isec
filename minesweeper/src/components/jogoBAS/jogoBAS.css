@@ -1,0 +1,4 @@
+.jogo-bas{
+    display: grid;
+    grid-template-columns: repeat(9, 7vh);
+}
