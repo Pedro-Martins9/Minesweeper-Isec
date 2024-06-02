@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "./App.css"
-import { Logo, BotaoBasico, BotaoIntermedio, BotaoAvancado, JogoBAS, JogoINT, JogoAVA } from './components/index';
+import { Logo, BotaoBasico, BotaoIntermedio, BotaoAvancado, JogoBAS, JogoINT, JogoAVA, BotaoMenu } from './components/index';
 
 
 function App(){
@@ -8,21 +8,26 @@ function App(){
     const[modoJogoBAS, setmodoJogoBAS] = useState(false);
 
     const handlemodoJogoBAS = () =>{
-        setmodoJogoBAS(true);
+        setmodoJogoBAS(!modoJogoBAS);
     };
 
     const[modoJogoINT, setmodoJogoINT] = useState(false);
 
     const handlemodoJogoINT= () =>{
-        setmodoJogoINT(true);
+        setmodoJogoINT(!modoJogoINT);
     };
 
     const[modoJogoAVA, setmodoJogoAVA] = useState(false);
 
     const handlemodoJogoAVA = () =>{
-        setmodoJogoAVA(true);
+        setmodoJogoAVA(!modoJogoAVA);
     };
 
+    const resetModoJogo = () =>{
+        setmodoJogoBAS(false);
+        setmodoJogoINT(false);
+        setmodoJogoAVA(false);
+    }
  
 return (
     <>
@@ -38,13 +43,22 @@ return (
         </div>)
     }
     {modoJogoBAS && (
+        <>
+        <div className='menu-container'><BotaoMenu resetModoJogo={resetModoJogo}/></div>
         <div className='jogo-container'><JogoBAS/></div>
+        </>
     )}
     {modoJogoINT && (
+        <>
+        <div className='menu-container'><BotaoMenu resetModoJogo={resetModoJogo}/></div>
         <div className='jogo-container'><JogoINT/></div>
+        </>
     )}
     {modoJogoAVA && (
+        <>
+        <div className='menu-container'><BotaoMenu resetModoJogo={resetModoJogo}/></div>
         <div className='jogo-container'><JogoAVA/></div>
+        </>
     )}
     </div>
     </>
