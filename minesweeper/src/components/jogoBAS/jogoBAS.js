@@ -87,7 +87,7 @@ function JogoBAS() {
     if (lin < 0 || lin >= LINS || col < 0 || col >= COLS || area[lin][col]) return; //procura se area clickada esta dentro da Area de jogo
     area[lin][col] = true;
     setActivo(true);
-    if (cell[lin][col] === -1){
+    if (cell[lin][col] === -1){ //se bomba o jogo acaba (activo = null)
       setActivo(null);
     } else if (cell[lin][col] === 0) { //se a celula nao tiver mina ou mina adjacente revela tambem as celulas adjacentes com as mesmas condições
       for (let i = -1; i <= 1; i++) {
