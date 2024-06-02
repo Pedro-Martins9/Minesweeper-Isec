@@ -1,9 +1,9 @@
-import "./contador.css"
 
+function Contador({total}) {
 
-function Contador() {
-
-    return;
+    return <div> 
+        <p>{total}🚩</p>
+    </div>;
 }
 
 

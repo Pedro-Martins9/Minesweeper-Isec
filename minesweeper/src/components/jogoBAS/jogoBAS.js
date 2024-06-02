@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./jogoBAS.css"
 import Timer from '../timer/timer';
 import GameOver from '../gameover/gameover';
+import Contador from '../contador/contador';
 
 function JogoBAS() {
   const LINS = 9;
@@ -11,8 +12,14 @@ function JogoBAS() {
   const [cell, setCell] = useState([]);
   const [area, setArea] = useState([]);
   const [band, setBand] = useState([]);
+  const [totalBand, setTotalBand] = useState(0); 
 
   const [activo, setActivo] =useState(false);
+
+  useEffect(() => {
+    const total = band.flat().filter(cell => cell === 1).length;
+    setTotalBand(total);
+  }, [band]);
 
   useEffect(() => {
     criaArea();
@@ -136,6 +143,7 @@ function JogoBAS() {
       <div className='botao timer'>
       <Timer activo={activo}/>
       <GameOver activo ={activo} reset={reset}/>
+      <Contador total = {totalBand}/>
       </div>
     </div>
     </>
