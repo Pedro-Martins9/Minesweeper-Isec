@@ -3,6 +3,7 @@ import "./jogoAVA.css"
 import Timer from '../timer/timer';
 import GameOver from '../gameover/gameover';
 import Contador from '../contador/contador';
+import GameWin from '../gamewin/gamewin';
 
 function JogoAVA() {
   const LINS = 16;
@@ -13,6 +14,30 @@ function JogoAVA() {
   const [area, setArea] = useState([]);
   const [band, setBand] = useState([]);
   const [totalBand, setTotalBand] = useState(0); 
+  const [gameW, setGameW] = useState(false);
+
+  useEffect(() => {
+    if (totalBand === MINAS) {
+      let fimdejogo = true;
+      for (let lin = 0; lin < LINS; lin++) {
+        for (let col = 0; col < COLS; col++) {
+          // procura para ver se as celulas escondidas tem bombas
+          if (cell[lin][col] !== -1 && !area[lin][col]) {
+            fimdejogo= false;
+            break; // se nao sai do loop e o jogo continua
+          }
+        }
+        if (!fimdejogo) {
+          break; // saida do loop externo
+        }
+      }
+  
+      // se so bombas estiverem escondidas o jogo acaba
+      if (fimdejogo) {
+        setGameW(true);
+      }
+    }
+  }, [gameW,totalBand, MINAS, cell, area]);
 
   useEffect(() => {
     const total = band.flat().filter(cell => cell === 1).length; //adiciona/retira elementos de um array cuja lenght é calculada, esta é o total de bandeiras
@@ -142,6 +167,7 @@ function JogoAVA() {
       <div className='botao timer'>
       <Timer activo={activo}/>
       <GameOver activo ={activo} reset={reset}/>
+      <GameWin gameW = {gameW} reset={reset}/>
       <Contador total = {totalBand}/>
       </div>
     </div>

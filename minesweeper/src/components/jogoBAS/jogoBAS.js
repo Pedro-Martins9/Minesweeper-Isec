@@ -39,7 +39,7 @@ function JogoBAS() {
         setGameW(true);
       }
     }
-  }, [totalBand, MINAS, cell, area]);
+  }, [gameW, totalBand, MINAS, cell, area]);
   
 
   useEffect(() => {
