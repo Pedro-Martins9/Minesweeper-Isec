@@ -101,6 +101,7 @@ function JogoINT() {
   function reset(){
     criaArea();
     setActivo(false);
+    setGameW(false);
   }
 
   function handleLeftClick(lin, col) {
