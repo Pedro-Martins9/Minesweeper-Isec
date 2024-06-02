@@ -8,6 +8,10 @@ function Timer({activo}) {
     useEffect(() => { //activo é importado dos modos de jogo e fica ativado quando uma celula é mostrada
         if (activo) {
             setConta(true);
+        } else {
+            // se activo ficar falso (reset) o timer volta a 0
+            setTemp({ min: 0, seg: 0 });
+            setConta(false);
         }
     }, [activo]);
 

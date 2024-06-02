@@ -65,6 +65,10 @@ function JogoBAS() {
     setArea(area); 
     setBand(band);
   }
+  function reset(){
+    criaArea();
+    setActivo(false);
+  }
 
   function handleLeftClick(lin, col) {
     if (area[lin][col] || band[lin][col] !== 0) return; // o primeiro check verifica se a celula já está revelada, o segundo verifica se este tem uma bandeira
@@ -100,6 +104,10 @@ function JogoBAS() {
   }
 
   return (
+    <>
+    <div className='reset-container'>
+      <button onClick={reset} type="button" className="botao reset">RESET</button>
+      </div>
     <div className='jogo-container'>
       <div className='jogo-bas'>
 {cell.map((lin, linIndex) => (
@@ -124,6 +132,7 @@ function JogoBAS() {
       <Timer activo={activo}/>
       </div>
     </div>
+    </>
   );
 }
 

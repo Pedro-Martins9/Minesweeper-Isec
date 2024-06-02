@@ -36,7 +36,7 @@ return (
         (<div className='homepage'>
         <div className='logo-container'><Logo/></div>
         {/* quando carregados, os botoes ativam o seu respetivo modo de jogo
-         cada modo de jogo tem um tabela respetiva (em desenvolvimento)*/}
+         cada modo de jogo tem um tabela respetiva*/}
         <div className='botao-container'><BotaoBasico handlemodoJogoBAS={handlemodoJogoBAS}/></div> 
         <div className='botao-container'><BotaoIntermedio handlemodoJogoINT={handlemodoJogoINT}/></div>
         <div className='botao-container'><BotaoAvancado handlemodoJogoAVA={handlemodoJogoAVA}/></div>

@@ -64,6 +64,11 @@
     color: white;
 }
 
+.reset-container{
+    position: absolute; 
+    transform: translate(-128%, 250%);
+}
+
 
 @media (max-width:769px) {
     .botao{

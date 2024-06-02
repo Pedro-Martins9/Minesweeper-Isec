@@ -11,7 +11,7 @@ function JogoINT() {
   const [area, setArea] = useState([]);
   const [band, setBand] = useState([]);
 
-  const [activo, setActivo] =useState(false);
+  const [activo, setActivo] =useState(false); //estado do jogo
 
   useEffect(() => {
     criaArea();
@@ -45,7 +45,6 @@ function JogoINT() {
       }
     }
 
-    // Procura minas adjacentes
     for (let lin = 0; lin < LINS; lin++) {
       for (let col = 0; col < COLS; col++) {
         if (cell[lin][col] === -1) continue;
@@ -66,6 +65,11 @@ function JogoINT() {
     setBand(band);
   }
 
+  function reset(){
+    criaArea();
+    setActivo(false);
+  }
+
   function handleLeftClick(lin, col) {
     if (area[lin][col] || band[lin][col] !== 0) return; // o primeiro check verifica se a celula já está revelada, o segundo verifica se este tem uma bandeira
   
@@ -77,7 +81,7 @@ function JogoINT() {
   
   
   function mostraCell(area, lin, col) {
-    if (lin < 0 || lin >= LINS || col < 0 || col >= COLS || area[lin][col]) return; //procura se area clickada esta dentro da Area de jogo
+    if (lin < 0 || lin >= LINS || col < 0 || col >= COLS || area[lin][col]) return; //procura se area clickada esta dentro da Area de jogo ou ja revelada
     area[lin][col] = true;
     setActivo(true);
     if (cell[lin][col] === 0) { //se a celula nao tiver mina ou mina adjacente revela tambem as celulas adjacentes com as mesmas condições
@@ -100,6 +104,10 @@ function JogoINT() {
   }
 
   return (
+    <>
+    <div className='reset-container'>
+      <button onClick={reset} type="button" className="botao reset">RESET</button>
+      </div>
     <div className='jogo-container'>
       <div className='jogo-int'>
 {cell.map((lin, linIndex) => (
@@ -124,6 +132,7 @@ function JogoINT() {
       <Timer activo={activo}/>
       </div>
     </div>
+    </>
   );
 }
 
