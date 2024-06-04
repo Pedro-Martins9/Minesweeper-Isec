@@ -62,9 +62,9 @@ function JogoBAS() {
       area[i] = [];
       band[i] = [];
       for (let j = 0; j < COLS; j++) {
-        cell[i][j] = 0;
+        cell[i][j] = 0; //se tem bomba ou nao
         area[i][j] = false; //estado inicial, celula escondida
-        band[i][j] = 0;
+        band[i][j] = 0; // se tem bandeira ou nao
       }
     }
 
@@ -79,19 +79,19 @@ function JogoBAS() {
       }
     }
 
-    //cria a area de jogo com as linhas e colunas indicas nas variaves iniciais LINS E COLS
+    //
     for (let lin = 0; lin < LINS; lin++) {
       for (let col = 0; col < COLS; col++) {
         if (cell[lin][col] === -1) continue;
         let numero = 0;
         for (let i = -1; i <= 1; i++) {
           for (let j = -1; j <= 1; j++) {
-            if (lin + i >= 0 && lin + i < LINS && col + j >= 0 && col + j < COLS) {
+            if (lin + i >= 0 && lin + i < LINS && col + j >= 0 && col + j < COLS) { //percorre as celulas a volta da celula revelada e por cada bomba incrementa o numero
               if (cell[lin + i][col + j] === -1) numero++;
             }
           }
         }
-        cell[lin][col] = numero;
+        cell[lin][col] = numero; // adiciona o numero que mostra o numero de bombas a volta da celula revelada
       }
     }
     //atribui os valores finais a cada celula e o que vai acontecer quando usado o rightclick ou leftclick
