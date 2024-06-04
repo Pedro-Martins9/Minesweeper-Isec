@@ -79,7 +79,7 @@ function JogoBAS() {
       }
     }
 
-    // Procura minas adjacentes
+    //cria a area de jogo com as linhas e colunas indicas nas variaves iniciais LINS E COLS
     for (let lin = 0; lin < LINS; lin++) {
       for (let col = 0; col < COLS; col++) {
         if (cell[lin][col] === -1) continue;
