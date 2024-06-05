@@ -82,11 +82,11 @@ function JogoBAS() {
     //
     for (let lin = 0; lin < LINS; lin++) {
       for (let col = 0; col < COLS; col++) {
-        if (cell[lin][col] === -1) continue;
+        if (cell[lin][col] === -1) continue; //procura todas as celulas com bomba
         let numero = 0;
         for (let i = -1; i <= 1; i++) {
-          for (let j = -1; j <= 1; j++) {
-            if (lin + i >= 0 && lin + i < LINS && col + j >= 0 && col + j < COLS) { //percorre as celulas a volta da celula revelada e por cada bomba incrementa o numero
+          for (let j = -1; j <= 1; j++) { //percorre as celulas a volta da celula com a bomba
+            if (lin + i >= 0 && lin + i < LINS && col + j >= 0 && col + j < COLS) { //percorre as celulas a volta da celula escolhida anteriormente e por cada bomba incrementa o numero
               if (cell[lin + i][col + j] === -1) numero++;
             }
           }
